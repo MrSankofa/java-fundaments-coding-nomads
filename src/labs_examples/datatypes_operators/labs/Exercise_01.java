@@ -17,6 +17,13 @@ public class Exercise_01 {
     public static void main(String[] args) {
 
         // write code here
+        int myInt = 21;
+        float myWorth = 1923939423423.39f;
+        char myChar = 'B';
+
+        System.out.println("myInt : " + myInt);
+        System.out.println("myWorth : " + myWorth);
+        System.out.println("myChar : " + myChar);
 
     }
 }
