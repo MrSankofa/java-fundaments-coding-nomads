@@ -28,6 +28,7 @@ class Vehicle4 {
 
 // This class declares an object of type Vehicle.
 class VehicleDemo {
+    // the jvm calls the main method
     public static void main(String args[]) {
 
         int range;
@@ -41,7 +42,7 @@ class VehicleDemo {
 
 
         // UNCOMMENT THE LINES BELOW - WHY DO WE SEE ERRORS?
-
+          // because the instance variables below are set to private in the Vehicle class
         /*
         minivan.passengers = 7;
         minivan.fuelcap = 16;
