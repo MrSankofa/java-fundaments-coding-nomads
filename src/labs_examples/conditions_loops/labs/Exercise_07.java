@@ -13,5 +13,7 @@ package labs_examples.conditions_loops.labs;
  *
  */
 
+// TODO: you could do this one
+
 public class Exercise_07 {
 }
