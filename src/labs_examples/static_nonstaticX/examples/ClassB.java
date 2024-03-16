@@ -1,4 +1,4 @@
-package labs_examples.static_nonstatic.examples;
+package labs_examples.static_nonstaticX.examples;
 
 /**
  * Created by ryandesmond - https://codingnomads.co
