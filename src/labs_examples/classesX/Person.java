@@ -1,4 +1,4 @@
-package labs_examples.classes;
+package labs_examples.classesX;
 
 class Person {
 }

@@ -46,7 +46,7 @@ public class Exercise_01 {
 
 
     // 5) Create a varargs method that will return the length of the varargs array passed in
-    static int lengthOfArgs(String[] varargs) {
+    static int lengthOfArgs(String...varargs) {
         return varargs.length;
     }
 
