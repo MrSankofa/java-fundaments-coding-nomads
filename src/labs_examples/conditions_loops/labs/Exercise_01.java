@@ -24,6 +24,8 @@ public class Exercise_01 {
         int number = scanner.nextInt();
 
         // write completed code here
+        String result = number % 2 == 0 ? "even" : "odd";
+        System.out.println("Your number " + number + " is " + result);
 
     }
 }
