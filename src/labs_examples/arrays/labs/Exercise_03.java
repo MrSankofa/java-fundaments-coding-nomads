@@ -1,5 +1,7 @@
 package labs_examples.arrays.labs;
 
+import java.util.ArrayList;
+
 /**
  *  2D Array
  *
@@ -18,6 +20,31 @@ package labs_examples.arrays.labs;
 public class Exercise_03 {
 
     public static void main(String[] args) {
+        int[][] fiveByFive = new int[5][5];
+
+        int multiple = 1;
+        for(int row = 0; row < fiveByFive.length; row++) {
+            for(int col = 0; col < fiveByFive.length; col++) {
+                fiveByFive[row][col] = (multiple) * 3;
+                multiple++;
+            }
+        }
+
+        for(int[] row : fiveByFive){
+            int count = 1;
+            for(int cell : row) {
+                if(count % 5 == 0) {
+                    System.out.println(cell + " ");
+                } else {
+                    System.out.print(cell + " ");
+                }
+                count++;
+            }
+
+        }
+
+
+
         
     }
 }
