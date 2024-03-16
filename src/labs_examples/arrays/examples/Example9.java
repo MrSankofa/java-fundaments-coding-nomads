@@ -1,5 +1,6 @@
 package labs_examples.arrays.examples;
 
+// assign by reference
 // Assigning array reference variables.
 class AssignARef {
     public static void main(String args[]) {
