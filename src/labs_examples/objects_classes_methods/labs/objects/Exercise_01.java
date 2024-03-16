@@ -20,23 +20,59 @@ class Airplane {
 
 // create your second class below this line
 class Pilot {
-  String name;
-  int age;
+
+  private String name;
+  private int age;
 
   Pilot(String name, int age) {
     this.name = name;
+    this.age = age;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public int getAge() {
+    return age;
+  }
+
+  public void setAge(int age) {
     this.age = age;
   }
 }
 
 // create your third class below this line
 class Company {
-  int since;
-  String name;
+  private int since;
+
+
+
+  private String name;
 
   Company(String name, int since) {
     this.since = since;
     this.name = name;
+  }
+
+  public void setSince(int since) {
+    this.since = since;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public int getSince() {
+    return since;
   }
 }
 
