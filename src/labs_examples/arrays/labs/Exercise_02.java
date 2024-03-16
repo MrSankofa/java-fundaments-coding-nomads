@@ -1,5 +1,6 @@
 package labs_examples.arrays.labs;
 
+
 /**
  *  More labs_examples.arrays
  *
@@ -15,6 +16,16 @@ public class Exercise_02 {
         int[] array = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
 
         // write code here
+       String userInput = args[0];
+       int convertedInput = Integer.parseInt(userInput);
+
+       int count = 0;
+       for(int num : array) {
+           if(num == convertedInput) {
+               System.out.println("index of " + num + " is " + count);
+           }
+           count++;
+       }
 
 
     }
