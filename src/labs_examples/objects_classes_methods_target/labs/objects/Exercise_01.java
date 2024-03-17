@@ -1,6 +1,7 @@
 package labs_examples.objects_classes_methods_target.labs.objects;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Exercise_01 {
   public static void main(String[] args) {
@@ -8,6 +9,13 @@ public class Exercise_01 {
     Airplane B52 = new Airplane(new Pilot("Dwight Eisenhower", 96), new Company("USA", 1776));
     my747.setName("747");
     B52.setName("B52");
+
+    Airplane mustang = new Airplane("mustang");
+
+    Amenities amenities = new Amenities();
+    amenities.entertainment = new ArrayList<String>(Arrays.asList("Movies", "Internet", "Snacks"));
+
+    Airplane deltaStandard = new Airplane("deltaStandard", amenities);
 
     my747.pilot.setName("Brett Cunningham II");
     System.out.println("How old is Brett? " + my747.pilot.getAge());
@@ -24,10 +32,15 @@ public class Exercise_01 {
     my747.setEngine(pEngine);
 
     System.out.println("Here is my 747: " + my747);
+    System.out.println("Here is my B52: " + B52);
+    System.out.println("Here is my mustang: " + mustang);
+    System.out.println("Here is my deltaStandard: " + deltaStandard);
 
     Hanger dtwHanger = new Hanger();
     dtwHanger.planesHeld.add(my747.getName());
     dtwHanger.planesHeld.add(B52.getName());
+    dtwHanger.planesHeld.add(mustang.getName());
+    dtwHanger.planesHeld.add(deltaStandard.getName());
     dtwHanger.setBay("6");
 
     System.out.println("My hanger: " + dtwHanger);
@@ -51,6 +64,15 @@ class Airplane {
   Airplane(Pilot pilot, Company company) {
     this.pilot = pilot;
     this.company = company;
+  }
+
+  Airplane(String name) {
+    this.name = name;
+  }
+
+  Airplane(String name, Amenities amenities) {
+    this.name = name;
+    this.amenities = amenities;
   }
 
   public Amenities getAmenities() {
