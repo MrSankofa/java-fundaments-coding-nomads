@@ -5,6 +5,9 @@ import java.util.ArrayList;
 public class Exercise_01 {
   public static void main(String[] args) {
     Airplane my747 = new Airplane(new Pilot("Brett", 37), new Company("Boeing", 1983));
+    Airplane B52 = new Airplane(new Pilot("Dwight Eisenhower", 96), new Company("USA", 1776));
+    my747.setName("747");
+    B52.setName("B52");
 
     my747.pilot.setName("Brett Cunningham II");
     System.out.println("How old is Brett? " + my747.pilot.getAge());
@@ -21,6 +24,13 @@ public class Exercise_01 {
     my747.setEngine(pEngine);
 
     System.out.println("Here is my 747: " + my747);
+
+    Hanger dtwHanger = new Hanger();
+    dtwHanger.planesHeld.add(my747.getName());
+    dtwHanger.planesHeld.add(B52.getName());
+    dtwHanger.setBay("6");
+
+    System.out.println("My hanger: " + dtwHanger);
   }
 
 }
@@ -29,12 +39,12 @@ public class Exercise_01 {
 class Airplane {
   Pilot pilot;
   Company company;
-
-
-
   Amenities amenities = new Amenities();
   PlaneEngine engine = new PlaneEngine();
 
+
+
+  String name;
   double fuelCapacity;
   double currentFuelLevel;
 
@@ -53,6 +63,14 @@ class Airplane {
 
   public PlaneEngine getEngine() {
     return engine;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   public void setEngine(PlaneEngine engine) {
@@ -191,6 +209,7 @@ class Amenities {
 // exercise 3
 class Hanger {
   private String bay;
+  ArrayList<String> planesHeld = new ArrayList<String>();
 
   public String getBay() {
     return bay;
@@ -198,6 +217,14 @@ class Hanger {
 
   public void setBay(String bay) {
     this.bay = bay;
+  }
+
+  @Override
+  public String toString() {
+    return "Hanger{" +
+        "bay='" + bay + '\'' +
+        ", planesHeld=" + planesHeld +
+        '}';
   }
 }
 
@@ -210,9 +237,9 @@ class Hanger {
 // (DONE) demo getting the variables from the class you composed the airplane object and invoking the to string methods
 
 
-// exercise 3 - demo object association in the Exercise_01 controller class (it contains the main() method)
-// create at least 2 POJOs
-// associate the 2 objects together
+// (Done) exercise 3 - demo object association in the Exercise_01 controller class (it contains the main() method)
+// (Done) create at least 2 POJOs
+// (Done) associate the 2 objects together
 
 
 
