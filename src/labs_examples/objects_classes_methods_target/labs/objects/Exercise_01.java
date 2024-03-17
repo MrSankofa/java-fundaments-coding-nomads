@@ -263,5 +263,6 @@ class Hanger {
 // (Done) create at least 2 POJOs
 // (Done) associate the 2 objects together
 
+// Exercise 4 and 5 done
 
 
