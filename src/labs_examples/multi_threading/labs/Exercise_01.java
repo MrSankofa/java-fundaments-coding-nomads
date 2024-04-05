@@ -8,4 +8,16 @@ package labs_examples.multi_threading.labs;
  *
  */
 
+class MyThread implements Runnable {
+   MyThread() {
+     Thread thread = new Thread();
+
+     thread.start();
+   }
+
+   @Override
+   public void run() {
+     System.out.println("Hello new threed");
+   }
+}
 
