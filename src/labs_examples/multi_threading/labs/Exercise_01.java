@@ -1,5 +1,7 @@
 package labs_examples.multi_threading.labs;
 
+import java.util.ArrayList;
+
 /**
  * Multithreading Exercise 1:
  *
@@ -8,16 +10,18 @@ package labs_examples.multi_threading.labs;
  *
  */
 
-class MyThread implements Runnable {
-   MyThread() {
-     Thread thread = new Thread();
 
-     thread.start();
-   }
+class GenericMethodTest {
+  // declare generic printArray() method
+  public static  < T > void printElement(T element ) {
+    System.out.print(element);
+  }
 
-   @Override
-   public void run() {
-     System.out.println("Hello new threed");
-   }
+  public static void main(String args[]) {
+    /* Create arrays of Integer,
+        Double and Character */
+    GenericMethodTest.printElement("This is generic");
+    GenericMethodTest.printElement(3234);
+    GenericMethodTest.printElement(3834F);
+  }
 }
-
