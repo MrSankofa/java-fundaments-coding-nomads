@@ -8,3 +8,43 @@ package labs_examples.enumerations.labs;
  *      of this enum from a separate class.
  */
 
+enum BANKS {
+  CHASE("Chase"),
+  SANTANDER("Santander"),
+  CAPITALONE("CapitalOne");
+
+  String name;
+
+  BANKS(String name) {
+    this.name = name;
+  }
+}
+
+class Exercise_01 {
+
+  public static void main(String[] args) {
+    TestBanks firstBank = new TestBanks(BANKS.CHASE);
+    boolean result = firstBank.isMyBank(BANKS.SANTANDER);
+
+    System.out.println("is this my bank? " + result);
+  }
+
+}
+
+
+class TestBanks {
+
+  BANKS bank;
+
+  TestBanks(BANKS bank){
+    this.bank = bank;
+  }
+
+  void setBank(BANKS bank) {
+    this.bank = bank;
+  }
+
+  boolean isMyBank(BANKS bank) {
+    return bank == this.bank;
+  }
+}
