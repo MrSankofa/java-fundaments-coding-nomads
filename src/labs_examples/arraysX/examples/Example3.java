@@ -1,6 +1,7 @@
 package labs_examples.arraysX.examples;
 
 // Use array initializers.
+// Tons of work pick it back up
 class MinMax2 {
     public static void main(String args[]) {
         int nums[] = { 99, -10, 100123, 18, -978,
