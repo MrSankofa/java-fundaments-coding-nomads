@@ -64,6 +64,16 @@ public class Exercise_01 {
 
     innerClass.abMethod();
 
+    Exercise3Interface returnIdentity = new Exercise3Interface() {
+      @Override
+      public int identity(int a) {
+        return a;
+      }
+    };
+
+    int result = returnIdentity.identity(3);
+
+    System.out.println("Here is my result : " + result);
 
   }
 
