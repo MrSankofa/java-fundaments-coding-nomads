@@ -23,3 +23,22 @@ package labs_examples.lambdas.labs;
  *
  *
  */
+
+
+@FunctionalInterface
+interface Exercise1Interface {
+  void abMethod();
+}
+
+@FunctionalInterface
+interface Exercise2Interface {
+  void abMethod();
+}
+
+public class Exercise_01 {
+  public static void main(String[] args) {
+    Exercise2Interface obj = () -> System.out.println("Hello World");
+
+    obj.abMethod();
+  }
+}
