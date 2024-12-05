@@ -41,6 +41,11 @@ interface Exercise3Interface {
   int identity(int a);
 }
 
+@FunctionalInterface
+interface Exercise4Interface {
+  int sum(int a, int b);
+}
+
 public class Exercise_01 {
 
   Exercise2Interface innerClass = new Exercise2Interface() {
@@ -74,6 +79,12 @@ public class Exercise_01 {
     int result = returnIdentity.identity(3);
 
     System.out.println("Here is my result : " + result);
+
+    Exercise4Interface e4 = (a, b) -> a + b;
+
+    int sum = e4.sum(2, 2);
+
+    System.out.println("Here is sum : " + sum);
 
   }
 
