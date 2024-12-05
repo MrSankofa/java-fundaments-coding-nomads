@@ -25,6 +25,7 @@ package labs_examples.lambdas.labs;
  */
 
 
+// correct
 @FunctionalInterface
 interface Exercise1Interface {
   void abMethod();
@@ -35,10 +36,37 @@ interface Exercise2Interface {
   void abMethod();
 }
 
+@FunctionalInterface
+interface Exercise3Interface {
+  int identity(int a);
+}
+
 public class Exercise_01 {
+
+  Exercise2Interface innerClass = new Exercise2Interface() {
+    @Override
+    public void abMethod() {
+      System.out.println("abMethod");
+    }
+  };
+
   public static void main(String[] args) {
     Exercise2Interface obj = () -> System.out.println("Hello World");
 
     obj.abMethod();
+
+    Exercise2Interface innerClass = new Exercise2Interface() {
+      @Override
+      public void abMethod() {
+        System.out.println("Hello inner class method");
+      }
+    };
+
+    innerClass.abMethod();
+
+
   }
+
+
 }
+
