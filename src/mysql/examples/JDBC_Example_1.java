@@ -2,8 +2,9 @@ package mysql.examples;
 
 import java.sql.*;
 
-// NOTE: This is more or less a copy of the example shown here on the platform
-// here: https://platform.codingnomads.co/learn/mod/page/view.php?id=2132
+
+// todo: use this to run the the code java -cp /Path/To/Jar/mysql-connector-j-9.1.0/mysql-connector-j-9.1.0.jar JDBC_Example_1.java
+
 
 public class JDBC_Example_1 {
 
@@ -18,9 +19,17 @@ public class JDBC_Example_1 {
             // This will load the MySQL driver, each DB has its own driver
             Class.forName("com.mysql.cj.jdbc.Driver");
 
+
+            String username = System.getenv("MYSQL_USERNAME");
+            String password = System.getenv("MYSQL_PASSWORD");
+
+            if (username == null || password == null) {
+                throw new RuntimeException("MySQL username or password environment variables are not set.");
+            }
+
             String connectionString = "jdbc:mysql://localhost/college?"
-                    + "user=<YOUR_MYSQL_USERNAME>&password=<YOUR_MYSQL_PASSWORD>"
-                    + "&useSSL=false&allowPublicKeyRetrieval=true";
+                + "user=" + username + "&password=" + password
+                + "&useSSL=false&allowPublicKeyRetrieval=true";
 
             // Setup the connection with the DB
             connection = DriverManager
@@ -38,10 +47,10 @@ public class JDBC_Example_1 {
                 // get the id, name and units fields from the result set and assign them to local variables
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
-                int units = resultSet.getInt("credits");
+                int units = resultSet.getInt("units");
 
                 // print out the result
-                System.out.println("Course ID: " + id + " is " + name + " and has " + units + units);
+                System.out.println("Course ID: " + id + " is " + name + " and has " + (units + units));
             }
 
         } catch (SQLException exc) {
